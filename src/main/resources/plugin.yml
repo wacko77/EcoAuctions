@@ -1,0 +1,12 @@
+name: EcoAuctions
+version: '${project.version}'
+main: me.wacko.ecoauctions.EcoAuctions
+api-version: '1.20'
+prefix: EcoAuctions
+authors: [Wacko]
+description: a simple auctions plugin for your survival economy!
+
+commands:
+  auctions:
+    aliases:
+    - auc
