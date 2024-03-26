@@ -2,6 +2,7 @@ package me.wacko.ecoauctions.core.gui;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
@@ -21,6 +22,13 @@ public abstract class AbstractGUI {
     public AbstractGUI(int invSize, String invName){
         uuid = UUID.randomUUID();
         inventory = Bukkit.createInventory(null, invSize, invName);
+        actions = new HashMap<>();
+        inventoriesByUUID.put(getUuid(), this);
+    }
+
+    public AbstractGUI(InventoryType invType, String invName) {
+        uuid = UUID.randomUUID();
+        inventory = Bukkit.createInventory(null,  invType, invName);
         actions = new HashMap<>();
         inventoriesByUUID.put(getUuid(), this);
     }
